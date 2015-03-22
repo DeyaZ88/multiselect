@@ -126,7 +126,9 @@ $.widget("ui.multiselect", {
 					if ($(this).is(":visible")) $(options[i-1]).attr('selected', 'selected'); 
 				});
 			} else {
-				options.attr('selected', 'selected');
+				options.each(function(){
+                                    $(this).prop('selected', true);
+                                });
 			}
 			that._populateLists(that.element.find('option'));
 			return false;
